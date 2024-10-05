@@ -16,7 +16,7 @@ namespace SelfFinanceApp.Persistance
         {
             services.AddDbContext<IDatabaseMigrator, ApplicationDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(configuration.GetConnectionString("MyDbContext"));
             });
 
             //Add Repositories

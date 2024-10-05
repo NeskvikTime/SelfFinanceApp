@@ -28,7 +28,6 @@ builder.Services
     })
     .AddNewtonsoftJson(options =>
     {
-        options.UseMemberCasing();
         options.SerializerSettings.Converters.Add(new StringEnumConverter());
     });
 
@@ -44,6 +43,7 @@ builder.Services.AddProblemDetails();
 builder.Services.AddInfrastructureServices();
 builder.Services.AddPersistanceServices(builder.Configuration);
 builder.Services.AddApplicationServices();
+builder.Services.AddCors();
 
 builder.Host.UseSerilog((hbc, lc) =>
     lc.WriteTo.Console()
@@ -64,6 +64,13 @@ app.UseSwaggerUI(options =>
     }
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "SelfFinanceApp.Api");
 });
+
+app.UseCors(builder => builder
+         .AllowAnyHeader()
+         .AllowAnyMethod()
+         .SetIsOriginAllowed((host) => true)
+         .AllowCredentials()
+     );
 
 app.MapHealthChecks("_health");
 
