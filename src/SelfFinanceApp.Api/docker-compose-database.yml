@@ -1,17 +1,16 @@
 version: '3.9'
-
 volumes:
-    sqldb-data:
+  postgres-data:
   
 services:
-
   db:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: MySqlDb
+    image: postgres:latest
+    container_name: MyPostgresDb
     environment:
-      - ACCEPT_EULA=true
-      - MSSQL_SA_PASSWORD=Pass@word
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Pass@word
+      - POSTGRES_DB=SelfFinanceApp
     ports:
-      - '5444:1433'
+      - '5432:5432'
     volumes:
-    - sqldb-data:/var/opt/mssql
+      - postgres-data:/var/lib/postgresql/data
