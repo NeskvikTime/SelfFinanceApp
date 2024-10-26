@@ -5,7 +5,7 @@ using DomainEntities = SelfFinanceApp.Domain.Entities;
 
 namespace SelfFinanceApp.Application.FinancialType.Commands.Create
 {
-    public record CreateFinancialTypeCommand(string Name, TransactionDirection DirectionType) 
+    public record CreateFinancialTypeCommand(string Name, TransactionDirection TransactionType) 
         : IValidatableRequest<ErrorOr<DomainEntities.FinancialType>>;
 
 }

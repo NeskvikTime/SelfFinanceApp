@@ -16,7 +16,7 @@ public class CreateFinancialTypeCommandHandler : IRequestHandler<CreateFinancial
 
     public async Task<ErrorOr<DomainEntities.FinancialType>> Handle(CreateFinancialTypeCommand request, CancellationToken token)
     {
-        DomainEntities.FinancialType typeToAdd = new DomainEntities.FinancialType(request.Name, request.DirectionType);
+        DomainEntities.FinancialType typeToAdd = new DomainEntities.FinancialType(request.Name, request.TransactionType);
 
         var financialType = await _financialTypesService.AddAsync(typeToAdd, token);
 

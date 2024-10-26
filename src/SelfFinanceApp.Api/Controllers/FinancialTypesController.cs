@@ -52,7 +52,7 @@ public class FinancialTypesController : ApiController
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> CreateAsync([FromBody] CreateFinancialTypeRequest request, CancellationToken token)
     {
-        var command = new CreateFinancialTypeCommand(request.Name, request.DirectionType);
+        var command = new CreateFinancialTypeCommand(request.Name, request.TransactionType);
         var result = await _sender.Send(command, token);
 
         return result.Match(type => Created(ApiEndpoints.FinancialTypes.Create, _mapper.Map<CreateFinancialTypeResponse>(type)), Problem);
@@ -64,7 +64,7 @@ public class FinancialTypesController : ApiController
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> UpdateAsync([FromRoute] Guid id, [FromBody] UpdateFinancialTypeRequest request, CancellationToken token)
     {
-        var result = await _sender.Send(new UpdateFinancialTypeCommand(id, request.Name, request.DirectionType), token);
+        var result = await _sender.Send(new UpdateFinancialTypeCommand(id, request.Name, request.TransactionType), token);
 
         return result.Match(type => Ok(_mapper.Map<UpdateFinancialTypeResponse>(type)), Problem);
     }
