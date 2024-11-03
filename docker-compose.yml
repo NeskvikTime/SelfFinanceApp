@@ -1,5 +1,4 @@
 version: "3.8"
-
 services:
   api:
     build:
@@ -7,12 +6,10 @@ services:
       dockerfile: src/SelfFinanceApp.Api/Dockerfile
     ports:
       - "8080:80"
-      - "8443:443"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
       - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=selffinancedb;Username=postgres;Password=mysecretpassword;Include Error Detail=true
-    depends_on:
-      - db
     networks:
       - app-network
 
@@ -27,6 +24,16 @@ services:
       - POSTGRES_PASSWORD=mysecretpassword
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+ 
+  jaeger:
+    image: jaegertracing/opentelemetry-all-in-one:latest
+    ports:
+      - 16686:16686
+      - 13133:13133
+      - 4317:4317
+      - 4318:4318
     networks:
       - app-network
 
