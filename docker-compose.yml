@@ -1,18 +1,5 @@
 version: "3.8"
 services:
-  api:
-    build:
-      context: .
-      dockerfile: src/SelfFinanceApp.Api/Dockerfile
-    ports:
-      - "8080:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://+:80
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=selffinancedb;Username=postgres;Password=mysecretpassword;Include Error Detail=true
-    networks:
-      - app-network
-
   db:
     image: postgres:latest
     container_name: selffinance-db
@@ -26,14 +13,21 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - app-network
- 
-  jaeger:
-    image: jaegertracing/opentelemetry-all-in-one:latest
+
+  local.api:
+    build:
+      context: .
+      dockerfile: src/SelfFinanceApp.Api/Dockerfile
+    container_name: local.selffinance-api
     ports:
-      - 16686:16686
-      - 13133:13133
-      - 4317:4317
-      - 4318:4318
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=selffinancedb;Username=postgres;Password=mysecretpassword;Include Error Detail=true
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4317
+      - OTEL_SERVICE_NAME=selffinance-api
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=selffinance-api,deployment.environment=development
     networks:
       - app-network
 
