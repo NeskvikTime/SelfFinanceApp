@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/SelfFinanceApp.Api/Dockerfile
+    ports:
+      - "8080:80"
+      - "8443:443"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=selffinancedb;Username=postgres;Password=mysecretpassword;Include Error Detail=true
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:latest
+    container_name: selffinance-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=selffinancedb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
