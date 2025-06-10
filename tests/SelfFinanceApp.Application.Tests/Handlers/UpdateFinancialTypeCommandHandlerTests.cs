@@ -42,7 +42,7 @@ public class UpdateFinancialTypeCommandHandlerTests
     public async Task Handle_InvalidId_ShouldReturnError()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         var updateCommand = new UpdateFinancialTypeCommand(id, "InvalidName", TransactionDirection.Expense);
 
         _financialTypesServiceMock.Setup(x => x.UpdateAsync(It.IsAny<Guid>(), It.IsAny<string>(), It.IsAny<TransactionDirection>(), It.IsAny<CancellationToken>()))

@@ -23,7 +23,7 @@ public class UpdateFinancialTypeCommandValidatorTests
     public async Task Should_HaveError_When_NameIsEmpty()
     {
         // Arrange
-        var command = new UpdateFinancialTypeCommand(Guid.NewGuid(), string.Empty, TransactionDirection.Income);
+        var command = new UpdateFinancialTypeCommand(Guid.CreateVersion7(), string.Empty, TransactionDirection.Income);
 
         // Act
         var result = await _validator.TestValidateAsync(command);
@@ -36,7 +36,7 @@ public class UpdateFinancialTypeCommandValidatorTests
     public async Task Should_HaveError_When_DirectionTypeIsInvalid()
     {
         // Arrange
-        var command = new UpdateFinancialTypeCommand(Guid.NewGuid(), "Some Name", (TransactionDirection)100);
+        var command = new UpdateFinancialTypeCommand(Guid.CreateVersion7(), "Some Name", (TransactionDirection)100);
 
         // Act
         var result = await _validator.TestValidateAsync(command);
@@ -50,7 +50,7 @@ public class UpdateFinancialTypeCommandValidatorTests
     public async Task Should_NotHaveError_When_Valid()
     {
         // Arrange
-        var command = new UpdateFinancialTypeCommand(Guid.NewGuid(), "Some Name", TransactionDirection.Income);
+        var command = new UpdateFinancialTypeCommand(Guid.CreateVersion7(), "Some Name", TransactionDirection.Income);
 
         // Act
         var result = await _validator.TestValidateAsync(command);

@@ -23,7 +23,7 @@ namespace SelfFinanceApp.Application.Tests.Handlers
         public async Task Should_ReturnError_When_AddingFinancialOperationFails()
         {
             // Arrange
-            var command = new CreateFinancialOperationCommand("Name", 200, "USD", Guid.NewGuid());
+            var command = new CreateFinancialOperationCommand("Name", 200, "USD", Guid.CreateVersion7());
             var cancellationToken = new CancellationToken();
 
             _financialOperationsServiceMock.Setup(x => x.AddFinancialOperationAsync(It.IsAny<string>(), It.IsAny<decimal>(), It.IsAny<string>(), It.IsAny<Guid>(), cancellationToken))
@@ -43,7 +43,7 @@ namespace SelfFinanceApp.Application.Tests.Handlers
             var financialOperation = new FinancialOperationBuilder()
                 .WithName("Name")
                 .WithMoney(new MonetaryValue(200, "USD"))
-                .WithId(Guid.NewGuid())
+                .WithId(Guid.CreateVersion7())
                 .Build();
 
             var command = new CreateFinancialOperationCommand(financialOperation.Name, financialOperation.Money.Amount, financialOperation.Money.Currency, financialOperation.FinanceTypeId);

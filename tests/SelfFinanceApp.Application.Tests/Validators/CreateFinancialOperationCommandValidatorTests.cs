@@ -37,7 +37,7 @@ public class CreateFinancialOperationCommandValidatorTests
     public async Task Should_HaveError_When_NameIsEmpty()
     {
         // Arrange
-        var command = new CreateFinancialOperationCommand("", 100, "USD", Guid.NewGuid());
+        var command = new CreateFinancialOperationCommand("", 100, "USD", Guid.CreateVersion7());
 
         // Act
         var result = await _validator.TestValidateAsync(command);
@@ -50,7 +50,7 @@ public class CreateFinancialOperationCommandValidatorTests
     public async Task Should_HaveError_When_NameExceeds50Chars()
     {
         // Arrange
-        var command = new CreateFinancialOperationCommand(new string('A', 51), 100, "USD", Guid.NewGuid());
+        var command = new CreateFinancialOperationCommand(new string('A', 51), 100, "USD", Guid.CreateVersion7());
 
         // Act
         var result = await _validator.TestValidateAsync(command);
@@ -63,7 +63,7 @@ public class CreateFinancialOperationCommandValidatorTests
     public async Task Should_HaveError_When_AmountIsZero()
     {
         // Arrange
-        var command = new CreateFinancialOperationCommand("Name", 0, "USD", Guid.NewGuid());
+        var command = new CreateFinancialOperationCommand("Name", 0, "USD", Guid.CreateVersion7());
 
         // Act
         var result = await _validator.TestValidateAsync(command);
@@ -76,7 +76,7 @@ public class CreateFinancialOperationCommandValidatorTests
     public async Task Should_HaveError_When_CurrencyIsEmpty()
     {
         // Arrange
-        var command = new CreateFinancialOperationCommand("Name", 100, "", Guid.NewGuid());
+        var command = new CreateFinancialOperationCommand("Name", 100, "", Guid.CreateVersion7());
 
         // Act
         var result = await _validator.TestValidateAsync(command);
@@ -89,7 +89,7 @@ public class CreateFinancialOperationCommandValidatorTests
     public async Task Should_HaveError_When_CurrencyExceeds3Chars()
     {
         // Arrange
-        var command = new CreateFinancialOperationCommand("Name", 100, "USDD", Guid.NewGuid());
+        var command = new CreateFinancialOperationCommand("Name", 100, "USDD", Guid.CreateVersion7());
 
         // Act
         var result = await _validator.TestValidateAsync(command);
@@ -102,7 +102,7 @@ public class CreateFinancialOperationCommandValidatorTests
     public async Task Should_NotHaveAnyValidationErrors_When_Valid()
     {
         // Arrange
-        var validFinancialTypeId = Guid.NewGuid();
+        var validFinancialTypeId = Guid.CreateVersion7();
 
         var validFinancialType = new FinancialTypeBuilder()
                                     .WithId(validFinancialTypeId)

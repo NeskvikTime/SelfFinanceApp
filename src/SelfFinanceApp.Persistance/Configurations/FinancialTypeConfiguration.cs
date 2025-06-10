@@ -9,9 +9,10 @@ namespace SelfFinanceApp.Persistance.Configurations
         public void Configure(EntityTypeBuilder<FinancialType> builder)
         {
             builder.HasKey(p => p.Id);
+            builder.Property(p => p.Id)
+                .ValueGeneratedNever();
 
-            builder
-                .HasIndex(financialType => financialType.Name)
+            builder.HasIndex(financialType => financialType.Name)
                 .IsUnique();
 
             builder.HasMany(p => p.FinancialOperations)

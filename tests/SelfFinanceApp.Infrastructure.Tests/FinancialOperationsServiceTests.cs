@@ -81,7 +81,7 @@ public class FinancialOperationsServiceTests
     public async Task GetByIdAsync_ShouldReturnFinancialOperation()
     {
         // Arrange
-        var financialOperationId = Guid.NewGuid();
+        var financialOperationId = Guid.CreateVersion7();
 
         var monetaryValue = new MonetaryValueBuilder()
             .WithAmount(100)
@@ -107,7 +107,7 @@ public class FinancialOperationsServiceTests
     public async Task DeleteByIdAsync_ShouldReturnTrue_WhenDeleteIsSuccessful()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         var cancellationToken = new CancellationToken();
 
         bool expectedResult = true;
@@ -128,7 +128,7 @@ public class FinancialOperationsServiceTests
     public async Task DeleteByIdAsync_ShouldReturnFalse_WhenRepositoryReturnsFalse()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
 
         bool expectedResult = false;
 
@@ -136,7 +136,7 @@ public class FinancialOperationsServiceTests
             .ReturnsAsync(expectedResult);
 
         // Act
-        var result = await _service.DeleteByIdAsync(Guid.NewGuid(), _cancellationToken);
+        var result = await _service.DeleteByIdAsync(Guid.CreateVersion7(), _cancellationToken);
 
         // Assert
         result.Should().Be(expectedResult);
@@ -146,7 +146,7 @@ public class FinancialOperationsServiceTests
     public async Task AddFinancialOperationAsync_ShouldReturnFinancialOperation_WhenAddedSuccessfully()
     {
         // Arrange
-        var financialTypeId = Guid.NewGuid();
+        var financialTypeId = Guid.CreateVersion7();
         string addedName = "TestAdded";
         decimal addedAmount = 150;
         string addedCurrency = "EUR";
@@ -196,7 +196,7 @@ public class FinancialOperationsServiceTests
         string addedName = "TestAdded";
         decimal addedAmount = 150;
         string addedCurrency = "EUR";
-        var financialTypeId = Guid.NewGuid();
+        var financialTypeId = Guid.CreateVersion7();
 
         // Act
         var result = await _service.AddFinancialOperationAsync(addedName, addedAmount, addedCurrency, financialTypeId, _cancellationToken);
@@ -210,7 +210,7 @@ public class FinancialOperationsServiceTests
     public async Task ExistsByIdAsync_ShouldReturnTrue_WhenIdExists()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         bool expectedResult = true;
 
         _repositoryMock.Setup(repo => repo.ExistsByIdAsync(id, It.IsAny<CancellationToken>())).ReturnsAsync(true);
@@ -226,13 +226,13 @@ public class FinancialOperationsServiceTests
     public async Task UpdateAsync_ShouldReturnUpdatedFinancialOperation_WhenUpdateIsSuccessful()
     {
         // Arrange
-        var financialOperationId = Guid.NewGuid();
+        var financialOperationId = Guid.CreateVersion7();
 
-        var financialTypeId = Guid.NewGuid();
+        var financialTypeId = Guid.CreateVersion7();
         string updatedName = "TestUpdated";
         decimal updatedAmount = 150;
         string updatedCurrency = "EUR";
-        var updatedFinancialTypeId = Guid.NewGuid();
+        var updatedFinancialTypeId = Guid.CreateVersion7();
 
         var cancellationToken = new CancellationToken();
 
@@ -314,7 +314,7 @@ public class FinancialOperationsServiceTests
     {
         // Arrange
         FinancialOperation? expectedResult = null;
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         string updatedName = "TestUpdated";
         decimal updatedAmount = 150;
         string updatedCurrency = "EUR";
@@ -335,15 +335,15 @@ public class FinancialOperationsServiceTests
     public async Task UpdateAsync_ShouldCallChangeFinanceTypeId_WhenFinanceTypeIdIsDifferent()
     {
         // Arrange
-        var oldTypeId = Guid.NewGuid();
-        var newTypeId = Guid.NewGuid();
+        var oldTypeId = Guid.CreateVersion7();
+        var newTypeId = Guid.CreateVersion7();
 
         string updatedName = "TestUpdated";
         decimal updatedAmount = 150;
         string updatedCurrency = "EUR";
 
         var financialOperation = new FinancialOperationBuilder()
-                                .WithId(Guid.NewGuid())
+                                .WithId(Guid.CreateVersion7())
                                 .WithFinancialType(new FinancialTypeBuilder().WithId(oldTypeId).Build())
                                 .Build();
 
@@ -362,14 +362,14 @@ public class FinancialOperationsServiceTests
     public async Task UpdateAsync_ShouldNotCallChangeFinanceTypeId_WhenFinanceTypeIdIsSame()
     {
         // Arrange
-        var typeId = Guid.NewGuid();
+        var typeId = Guid.CreateVersion7();
 
         string updatedName = "TestUpdated";
         decimal updatedAmount = 150;
         string updatedCurrency = "EUR";
 
         var financialOperation = new FinancialOperationBuilder()
-                                .WithId(Guid.NewGuid())
+                                .WithId(Guid.CreateVersion7())
                                 .WithFinancialType(new FinancialTypeBuilder().WithId(typeId).Build())
                                 .Build();
 

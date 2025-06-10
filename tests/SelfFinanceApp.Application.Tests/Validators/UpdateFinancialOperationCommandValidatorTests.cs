@@ -25,11 +25,11 @@ public class UpdateFinancialOperationCommandValidatorTests
         _financialOperationsServiceMock.Setup(x => x.ExistsByIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>())).ReturnsAsync(false);
 
         var command = new UpdateFinancialOperationCommand(
-            Guid.NewGuid(),
+            Guid.CreateVersion7(),
             "TestName",
             10.0M,
             "USD",
-            Guid.NewGuid()
+            Guid.CreateVersion7()
         );
 
         // Act
@@ -46,11 +46,11 @@ public class UpdateFinancialOperationCommandValidatorTests
         _financialTypesServiceMock.Setup(x => x.ExistsByIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>())).ReturnsAsync(false);
 
         var command = new UpdateFinancialOperationCommand(
-            Guid.NewGuid(),
+            Guid.CreateVersion7(),
             "TestName",
             10.0M,
             "USD",
-            Guid.NewGuid()
+            Guid.CreateVersion7()
         );
 
         // Act
@@ -65,11 +65,11 @@ public class UpdateFinancialOperationCommandValidatorTests
     {
         // Arrange
         var command = new UpdateFinancialOperationCommand(
-            Guid.NewGuid(),
+            Guid.CreateVersion7(),
             "TestName",
             0,
             "USD",
-            Guid.NewGuid()
+            Guid.CreateVersion7()
         );
 
         // Act
@@ -84,11 +84,11 @@ public class UpdateFinancialOperationCommandValidatorTests
     {
         // Arrange
         var command = new UpdateFinancialOperationCommand(
-            Guid.NewGuid(),
+            Guid.CreateVersion7(),
             "TestName",
             10.0M,
             "LONGCURRENCY",
-            Guid.NewGuid()
+            Guid.CreateVersion7()
         );
 
         // Act

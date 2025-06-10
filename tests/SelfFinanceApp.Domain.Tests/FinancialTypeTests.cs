@@ -12,7 +12,7 @@ namespace SelfFinanceApp.Domain.Tests
             // Arrange
             var expectedName = "Test";
             var expectedTransactionType = TransactionDirection.Income;
-            var expectedId = Guid.NewGuid();
+            var expectedId = Guid.CreateVersion7();
             var builder = new FinancialTypeBuilder()
                             .WithName(expectedName)
                             .WithTransactionDirection(expectedTransactionType)

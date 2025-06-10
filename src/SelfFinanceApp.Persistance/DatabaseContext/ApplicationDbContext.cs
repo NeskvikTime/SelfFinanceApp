@@ -17,8 +17,8 @@ internal class ApplicationDbContext : DbContext, IDatabaseMigrator
         _dateTimeProvider = dateTimeProvider;
     }
 
-    public DbSet<FinancialType> FinancialTypes => Set<FinancialType>();
-    public DbSet<FinancialOperation> FinancialOperations => Set<FinancialOperation>();
+    public DbSet<FinancialType> FinancialTypes { get; set; } = default!;
+    public DbSet<FinancialOperation> FinancialOperations { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
