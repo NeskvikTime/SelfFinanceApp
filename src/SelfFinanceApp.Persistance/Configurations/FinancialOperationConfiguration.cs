@@ -16,16 +16,18 @@ namespace SelfFinanceApp.Persistance.Configurations
                 .IsUnique();
 
             builder
-                .OwnsOne(financialOperation => financialOperation.Money)
-                .Property(p => p.Amount)
-                .HasColumnName("Amount")
-                .HasPrecision(18, 2);
+                .OwnsOne(financialOperation => financialOperation.Money, moneyBuilder =>
+                {
+                    moneyBuilder
+                        .Property(m => m.Amount)
+                        .HasColumnName("Amount")
+                        .HasPrecision(18, 2);
 
-            builder
-                .OwnsOne(financialOperation => financialOperation.Money)
-                .Property(p => p.Currency)
-                .HasColumnName("Currency")
-                .HasMaxLength(3);
+                    moneyBuilder
+                        .Property(m => m.Currency)
+                        .HasColumnName("Currency")
+                        .HasMaxLength(3);
+                });
 
             builder
                 .HasOne(financialOperation => financialOperation.FinanceType)

@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using SelfFinanceApp.Domain.Aggregates;
 using SelfFinanceApp.Domain.Contracts.Repositories;
 using SelfFinanceApp.Domain.Enums;
 using SelfFinanceApp.Domain.ValueObjects;
 using SelfFinanceApp.Persistance.DatabaseContext;
-using System.Linq.Expressions;
 
 namespace SelfFinanceApp.Persistance.Repositories;
 
@@ -79,7 +79,7 @@ internal class FinancialOperationsRepository : IFinancialOperationsRepository
     {
         IQueryable<FinancialOperation> financialOperationsQuery = _dbContext.FinancialOperations
             .Include(operation => operation.FinanceType)
-            .Where(operation => operation.DateCreated.Date >= fromDate.Date && operation.DateCreated.Date <= toDate.Date)
+            .Where(operation => operation.DateCreated.Date >= fromDate.Date.ToUniversalTime() && operation.DateCreated.Date <= toDate.Date.ToUniversalTime())
             .AsSplitQuery();
 
         if (!string.IsNullOrWhiteSpace(currency))
@@ -151,7 +151,7 @@ internal class FinancialOperationsRepository : IFinancialOperationsRepository
     {
         IQueryable<FinancialOperation> financialOperationsQuery = _dbContext.FinancialOperations
             .Include(operation => operation.FinanceType)
-            .Where(operation => operation.DateModified.Date >= fromDate.Date && operation.DateModified.Date <= toDate.Date)
+            .Where(operation => operation.DateModified.Date >= fromDate.Date.ToUniversalTime() && operation.DateModified.Date <= toDate.Date.ToUniversalTime())
             .AsSplitQuery();
 
         if (transactionType is not null)

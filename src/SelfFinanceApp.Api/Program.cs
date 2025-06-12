@@ -1,7 +1,6 @@
 using Asp.Versioning;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using Newtonsoft.Json.Converters;
 using SelfFinanceApp.Api.DbInitializer;
 using SelfFinanceApp.Api.Filters;
 using SelfFinanceApp.Api.Swagger;
@@ -21,15 +20,10 @@ builder.Services.AddApiVersioning(options =>
     options.ApiVersionReader = new MediaTypeApiVersionReader("api-version");
 }).AddMvc().AddApiExplorer();
 
-builder.Services
-    .AddControllers(cfg =>
-    {
-        cfg.Filters.Add(typeof(ExceptionFilter));
-    })
-    .AddNewtonsoftJson(options =>
-    {
-        options.SerializerSettings.Converters.Add(new StringEnumConverter());
-    });
+builder.Services.AddControllers(cfg =>
+{
+    cfg.Filters.Add(typeof(ExceptionFilter));
+});
 
 builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 builder.Services.AddSwaggerGen(x =>
@@ -37,7 +31,8 @@ builder.Services.AddSwaggerGen(x =>
     x.SwaggerDoc("v1", new OpenApiInfo { Title = "SelfFinanceApp.Api", Version = "v1" });
     x.OperationFilter<SwaggerDefaultValues>();
     x.MapType<DateOnly>(() => new OpenApiSchema { Type = "string", Format = "date-only" });
-}).AddSwaggerGenNewtonsoftSupport();
+});
+
 builder.Services.AddProblemDetails();
 
 builder.Services.AddInfrastructureServices();
@@ -56,6 +51,7 @@ app.ApplyMigrations();
 app.UseSerilogRequestLogging();
 
 app.UseSwagger();
+
 app.UseSwaggerUI(options =>
 {
     foreach (var description in app.DescribeApiVersions())
