@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:latest
+    container_name: selffinance-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=selffinancedb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=mysecretpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  local.api:
+    build:
+      context: .
+      dockerfile: src/SelfFinanceApp.Api/Dockerfile
+    container_name: local.selffinance-api
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=selffinancedb;Username=postgres;Password=mysecretpassword;Include Error Detail=true
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4317
+      - OTEL_SERVICE_NAME=selffinance-api
+      - OTEL_RESOURCE_ATTRIBUTES=service.name=selffinance-api,deployment.environment=development
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

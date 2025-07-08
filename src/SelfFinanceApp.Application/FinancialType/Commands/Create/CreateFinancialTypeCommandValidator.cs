@@ -27,12 +27,12 @@ public class CreateFinancialTypeCommandValidator : AbstractValidator<CreateFinan
             })
             .WithMessage($"'{nameof(CreateFinancialTypeCommand.Name)}' must be unique.");
 
-        RuleFor(x => x.DirectionType)
+        RuleFor(x => x.TransactionType)
             .IsInEnum()
-            .WithMessage($"'{nameof(CreateFinancialTypeCommand.DirectionType)}' must be a valid enum value.");
+            .WithMessage($"'{nameof(CreateFinancialTypeCommand.TransactionType)}' must be a valid enum value.");
 
-        RuleFor(x => x.DirectionType)
+        RuleFor(x => x.TransactionType)
             .IsInEnum()
-            .WithMessage($"'{nameof(CreateFinancialTypeCommand.DirectionType)}' must be a valid enum value.");
+            .WithMessage($"'{nameof(CreateFinancialTypeCommand.TransactionType)}' must be a valid enum value.");
     }
 }

@@ -55,7 +55,7 @@ public class CreateFinancialTypeCommandValidatorTests
         var result = await _validator.TestValidateAsync(command);
 
         // Assert
-        result.ShouldHaveValidationErrorFor(x => x.DirectionType);
+        result.ShouldHaveValidationErrorFor(x => x.TransactionType);
     }
 
     [Fact]

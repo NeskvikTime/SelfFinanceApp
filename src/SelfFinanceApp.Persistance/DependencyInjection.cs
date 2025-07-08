@@ -17,7 +17,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<IDatabaseMigrator, ApplicationDbContext>(options =>
         {
-            options.UseNpgsql(configuration.GetConnectionString("MyDbContext"),
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"),
                 npgsqlOptionsAction: sqlOptions =>
                 {
                     sqlOptions.EnableRetryOnFailure(
@@ -31,8 +31,9 @@ public static class DependencyInjection
         services.AddScoped<IFinancialTypesRepository, FinancialTypesRepository>();
         services.AddScoped<IFinancialOperationsRepository, FinancialOperationsRepository>();
         services.AddScoped<IDateTimeProvider, SystemDateTimeProvider>();
+        
         services.AddHealthChecks()
-            .AddNpgSql(configuration.GetConnectionString("MyDbContext")!,
+            .AddNpgSql(configuration.GetConnectionString("DefaultConnection")!,
                 name: DatabaseHealthCheck.Name,
                 tags: new[] { "ready" });
     }

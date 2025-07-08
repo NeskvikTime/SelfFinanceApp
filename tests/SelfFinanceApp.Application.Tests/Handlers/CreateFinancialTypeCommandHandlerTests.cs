@@ -11,7 +11,7 @@ using SelfFinanceApp.Tests.Shared.Builders;
 namespace SelfFinanceApp.Application.Tests.Handlers;
 
 public class CreateFinancialTypeCommandHandlerTests
-{
+{ 
 
     private readonly Mock<IFinancialTypesService> _financialTypesServiceMock;
     private readonly Mock<IMapper> _mapperMock;
