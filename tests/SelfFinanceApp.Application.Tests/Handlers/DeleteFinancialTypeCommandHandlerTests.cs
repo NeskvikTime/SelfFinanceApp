@@ -21,7 +21,7 @@ namespace SelfFinanceApp.Application.Tests.Handlers
         public async Task Handle_ValidId_ShouldReturnDeleted()
         {
             // Arrange
-            var id = Guid.NewGuid();
+            var id = Guid.CreateVersion7();
             var command = new DeleteFinancialTypeCommand(id);
 
             _financialTypesServiceMock.Setup(x => x.DeleteByIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))
@@ -38,7 +38,7 @@ namespace SelfFinanceApp.Application.Tests.Handlers
         public async Task Handle_InvalidId_ShouldReturnError()
         {
             // Arrange
-            var id = Guid.NewGuid();
+            var id = Guid.CreateVersion7();
             var command = new DeleteFinancialTypeCommand(id);
 
             _financialTypesServiceMock.Setup(x => x.DeleteByIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>()))

@@ -23,7 +23,7 @@ public class PatchFinancialTypeCommandValidatorTests
         // Arrange
         _financialTypesServiceMock.Setup(x => x.ExistsByIdAsync(It.IsAny<Guid>(), It.IsAny<CancellationToken>())).ReturnsAsync(false);
         var command = new PatchFinancialTypeCommand(
-            Guid.NewGuid(),
+            Guid.CreateVersion7(),
             new JsonPatchDocument<PatchFinancialTypeRequest>()
         );
 
@@ -39,7 +39,7 @@ public class PatchFinancialTypeCommandValidatorTests
     {
         // Arrange
         var command = new PatchFinancialTypeCommand(
-            Guid.NewGuid(),
+            Guid.CreateVersion7(),
             null!
         );
 
@@ -55,7 +55,7 @@ public class PatchFinancialTypeCommandValidatorTests
     {
         // Arrange
         var command = new PatchFinancialTypeCommand(
-            Guid.NewGuid(),
+            Guid.CreateVersion7(),
             new JsonPatchDocument<PatchFinancialTypeRequest>()
         );
 

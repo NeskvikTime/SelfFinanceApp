@@ -15,7 +15,7 @@ namespace SelfFinanceApp.Domain.Aggregates
             string name,
             MonetaryValue money,
             Guid financeTypeId,
-            Guid? id = null) : base(id ?? Guid.NewGuid())
+            Guid? id = null) : base(id ?? Guid.CreateVersion7())
         {
             Name = name;
             Money = money;

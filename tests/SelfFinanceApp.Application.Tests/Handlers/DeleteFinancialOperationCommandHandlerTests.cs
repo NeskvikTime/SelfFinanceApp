@@ -20,7 +20,7 @@ public class DeleteFinancialOperationCommandHandlerTests
     public async Task Should_ReturnError_When_DeletingFinancialOperationFails()
     {
         // Arrange
-        var command = new DeleteFinancialOperationCommand(Guid.NewGuid());
+        var command = new DeleteFinancialOperationCommand(Guid.CreateVersion7());
         var cancellationToken = new CancellationToken();
 
         _financialOperationsServiceMock.Setup(x => x.DeleteByIdAsync(It.IsAny<Guid>(), cancellationToken))
@@ -37,7 +37,7 @@ public class DeleteFinancialOperationCommandHandlerTests
     public async Task Should_ReturnDeleted_When_DeletingSucceeds()
     {
         // Arrange
-        var command = new DeleteFinancialOperationCommand(Guid.NewGuid());
+        var command = new DeleteFinancialOperationCommand(Guid.CreateVersion7());
         var cancellationToken = new CancellationToken();
 
         _financialOperationsServiceMock.Setup(x => x.DeleteByIdAsync(It.IsAny<Guid>(), cancellationToken))

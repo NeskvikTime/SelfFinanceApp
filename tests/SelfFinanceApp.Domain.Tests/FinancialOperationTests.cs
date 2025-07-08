@@ -12,8 +12,8 @@ public class FinancialOperationTests
         // Arrange
         var expectedName = "Operation";
         var expectedMoney = new MonetaryValue(100, "USD");
-        var expectedFinanceTypeId = Guid.NewGuid();
-        var expectedId = Guid.NewGuid();
+        var expectedFinanceTypeId = Guid.CreateVersion7();
+        var expectedId = Guid.CreateVersion7();
 
         var financeType = new FinancialTypeBuilder()
                             .WithName("Test")
@@ -69,7 +69,7 @@ public class FinancialOperationTests
         // Arrange
         var financeType = new FinancialTypeBuilder().Build();
 
-        var expectedNewFinanceTypeId = Guid.NewGuid();
+        var expectedNewFinanceTypeId = Guid.CreateVersion7();
         var financialOperation = new FinancialOperationBuilder().WithFinancialType(financeType).Build();
 
         // Act

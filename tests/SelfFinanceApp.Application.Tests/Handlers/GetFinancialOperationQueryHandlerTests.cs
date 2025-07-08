@@ -22,7 +22,7 @@ public class GetFinancialOperationQueryHandlerTests
     public async Task Should_ReturnError_When_FinancialOperationNotFound()
     {
         // Arrange
-        var query = new GetFinancialOperationQuery(Guid.NewGuid());
+        var query = new GetFinancialOperationQuery(Guid.CreateVersion7());
         var cancellationToken = new CancellationToken();
 
         _financialOperationsServiceMock.Setup(x => x.GetByIdAsync(It.IsAny<Guid>(), cancellationToken))
@@ -40,7 +40,7 @@ public class GetFinancialOperationQueryHandlerTests
     {
         // Arrange
         var financialOperation = new FinancialOperationBuilder()
-            .WithId(Guid.NewGuid())
+            .WithId(Guid.CreateVersion7())
             .WithName("Operation Name")
             .Build();
 

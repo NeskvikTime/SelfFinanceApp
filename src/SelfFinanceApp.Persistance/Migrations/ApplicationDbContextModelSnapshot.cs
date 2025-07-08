@@ -17,7 +17,7 @@ namespace SelfFinanceApp.Persistance.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "9.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -52,114 +52,114 @@ namespace SelfFinanceApp.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("96cc5657-5952-4c3b-a42a-5e5f7b3e2726"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(982),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(983),
-                            FinanceTypeId = new Guid("6f02e2db-3464-4859-b0cd-600b100e2c86"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000001"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Name = "Paying bills 06-2023"
                         },
                         new
                         {
-                            Id = new Guid("9be65141-fff9-4c86-b528-2de2fc9c8463"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(985),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(985),
-                            FinanceTypeId = new Guid("213a6165-fe70-44e8-8745-6a80f0071c98"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000002"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Name = "Paying rent 06-2023"
                         },
                         new
                         {
-                            Id = new Guid("93ce69e6-9b35-45e5-b5f4-7fefd9fd8e6c"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(987),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(987),
-                            FinanceTypeId = new Guid("18c4a168-e83c-4763-bed2-6bd565c455bf"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000003"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Name = "Salary 06-2023"
                         },
                         new
                         {
-                            Id = new Guid("b06dd3e9-55b9-4ded-a43f-631bc93a880d"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(988),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(988),
-                            FinanceTypeId = new Guid("50f46a28-c0e5-4bb6-be11-01a9ee483dd2"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000004"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("44444444-4444-4444-4444-444444444444"),
                             Name = "Dividend 06-2023"
                         },
                         new
                         {
-                            Id = new Guid("34e57bf4-bf10-4294-b065-c630e2a6783b"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(991),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(991),
-                            FinanceTypeId = new Guid("6f02e2db-3464-4859-b0cd-600b100e2c86"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000005"),
+                            DateCreated = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Name = "Paying bills 07-2023"
                         },
                         new
                         {
-                            Id = new Guid("1dee64d7-f084-42e3-a605-234366ef6657"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(993),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(993),
-                            FinanceTypeId = new Guid("213a6165-fe70-44e8-8745-6a80f0071c98"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000006"),
+                            DateCreated = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Name = "Paying rent 07-2023"
                         },
                         new
                         {
-                            Id = new Guid("77549b3a-f710-47bb-8f13-a9e17e38f196"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(994),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(994),
-                            FinanceTypeId = new Guid("18c4a168-e83c-4763-bed2-6bd565c455bf"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000007"),
+                            DateCreated = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Name = "Salary 07-2023"
                         },
                         new
                         {
-                            Id = new Guid("91711918-62ca-4351-892f-4828c7565fa6"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(995),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(996),
-                            FinanceTypeId = new Guid("50f46a28-c0e5-4bb6-be11-01a9ee483dd2"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000008"),
+                            DateCreated = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 7, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("44444444-4444-4444-4444-444444444444"),
                             Name = "Dividend 07-2023"
                         },
                         new
                         {
-                            Id = new Guid("27f01d4c-37e0-49dd-aef5-e92c133439d0"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(997),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(998),
-                            FinanceTypeId = new Guid("6f02e2db-3464-4859-b0cd-600b100e2c86"),
+                            Id = new Guid("10000000-0000-0000-0000-000000000009"),
+                            DateCreated = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Name = "Paying bills 08-2023"
                         },
                         new
                         {
-                            Id = new Guid("669adc27-0696-4bb0-853b-f6d0475d19a4"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(999),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(999),
-                            FinanceTypeId = new Guid("213a6165-fe70-44e8-8745-6a80f0071c98"),
+                            Id = new Guid("10000000-0000-0000-0000-00000000000a"),
+                            DateCreated = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Name = "Paying rent 08-2023"
                         },
                         new
                         {
-                            Id = new Guid("f80e1d73-594a-4b50-a815-badac614bebb"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1000),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1000),
-                            FinanceTypeId = new Guid("18c4a168-e83c-4763-bed2-6bd565c455bf"),
+                            Id = new Guid("10000000-0000-0000-0000-00000000000b"),
+                            DateCreated = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("33333333-3333-3333-3333-333333333333"),
                             Name = "Salary 08-2023"
                         },
                         new
                         {
-                            Id = new Guid("8b344516-7529-46ae-9764-386d5f268fe2"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1002),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1002),
-                            FinanceTypeId = new Guid("50f46a28-c0e5-4bb6-be11-01a9ee483dd2"),
+                            Id = new Guid("10000000-0000-0000-0000-00000000000c"),
+                            DateCreated = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 8, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("44444444-4444-4444-4444-444444444444"),
                             Name = "Dividend 08-2023"
                         },
                         new
                         {
-                            Id = new Guid("e506c87d-ed60-4db5-96b8-23de459e160c"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1057),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1058),
-                            FinanceTypeId = new Guid("6f02e2db-3464-4859-b0cd-600b100e2c86"),
+                            Id = new Guid("10000000-0000-0000-0000-00000000000d"),
+                            DateCreated = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("11111111-1111-1111-1111-111111111111"),
                             Name = "Paying bills 09-2023"
                         },
                         new
                         {
-                            Id = new Guid("93f9f2f5-806e-4271-85e4-4526c284cd46"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1059),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(1059),
-                            FinanceTypeId = new Guid("213a6165-fe70-44e8-8745-6a80f0071c98"),
+                            Id = new Guid("10000000-0000-0000-0000-00000000000e"),
+                            DateCreated = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 9, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            FinanceTypeId = new Guid("22222222-2222-2222-2222-222222222222"),
                             Name = "Paying rent 09-2023"
                         });
                 });
@@ -167,7 +167,6 @@ namespace SelfFinanceApp.Persistance.Migrations
             modelBuilder.Entity("SelfFinanceApp.Domain.Entities.FinancialType", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("DateCreated")
@@ -192,33 +191,33 @@ namespace SelfFinanceApp.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6f02e2db-3464-4859-b0cd-600b100e2c86"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(806),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(809),
+                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Bills",
                             TransactionType = 2
                         },
                         new
                         {
-                            Id = new Guid("213a6165-fe70-44e8-8745-6a80f0071c98"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(814),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(815),
+                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Rent",
                             TransactionType = 2
                         },
                         new
                         {
-                            Id = new Guid("18c4a168-e83c-4763-bed2-6bd565c455bf"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(816),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(817),
+                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Salary",
                             TransactionType = 1
                         },
                         new
                         {
-                            Id = new Guid("50f46a28-c0e5-4bb6-be11-01a9ee483dd2"),
-                            DateCreated = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(818),
-                            DateModified = new DateTime(2024, 10, 24, 13, 33, 14, 173, DateTimeKind.Utc).AddTicks(818),
+                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
+                            DateCreated = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
+                            DateModified = new DateTime(2023, 6, 1, 0, 0, 0, 0, DateTimeKind.Utc),
                             Name = "Dividends",
                             TransactionType = 1
                         });
@@ -257,85 +256,85 @@ namespace SelfFinanceApp.Persistance.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    FinancialOperationId = new Guid("96cc5657-5952-4c3b-a42a-5e5f7b3e2726"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000001"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("9be65141-fff9-4c86-b528-2de2fc9c8463"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000002"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("93ce69e6-9b35-45e5-b5f4-7fefd9fd8e6c"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000003"),
                                     Amount = 3000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("b06dd3e9-55b9-4ded-a43f-631bc93a880d"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000004"),
                                     Amount = 100m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("34e57bf4-bf10-4294-b065-c630e2a6783b"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000005"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("1dee64d7-f084-42e3-a605-234366ef6657"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000006"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("77549b3a-f710-47bb-8f13-a9e17e38f196"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000007"),
+                                    Amount = 3000m,
+                                    Currency = "EUR"
+                                },
+                                new
+                                {
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000008"),
+                                    Amount = 100m,
+                                    Currency = "EUR"
+                                },
+                                new
+                                {
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-000000000009"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("91711918-62ca-4351-892f-4828c7565fa6"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-00000000000a"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("27f01d4c-37e0-49dd-aef5-e92c133439d0"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-00000000000b"),
+                                    Amount = 3000m,
+                                    Currency = "EUR"
+                                },
+                                new
+                                {
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-00000000000c"),
+                                    Amount = 100m,
+                                    Currency = "EUR"
+                                },
+                                new
+                                {
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-00000000000d"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 },
                                 new
                                 {
-                                    FinancialOperationId = new Guid("669adc27-0696-4bb0-853b-f6d0475d19a4"),
-                                    Amount = 1000m,
-                                    Currency = "EUR"
-                                },
-                                new
-                                {
-                                    FinancialOperationId = new Guid("f80e1d73-594a-4b50-a815-badac614bebb"),
-                                    Amount = 1000m,
-                                    Currency = "EUR"
-                                },
-                                new
-                                {
-                                    FinancialOperationId = new Guid("8b344516-7529-46ae-9764-386d5f268fe2"),
-                                    Amount = 1000m,
-                                    Currency = "EUR"
-                                },
-                                new
-                                {
-                                    FinancialOperationId = new Guid("e506c87d-ed60-4db5-96b8-23de459e160c"),
-                                    Amount = 1000m,
-                                    Currency = "EUR"
-                                },
-                                new
-                                {
-                                    FinancialOperationId = new Guid("93f9f2f5-806e-4271-85e4-4526c284cd46"),
+                                    FinancialOperationId = new Guid("10000000-0000-0000-0000-00000000000e"),
                                     Amount = 1000m,
                                     Currency = "EUR"
                                 });

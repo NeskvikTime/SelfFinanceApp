@@ -23,7 +23,7 @@ public class UpdateFinancialOperationCommandHandlerTests
     public async Task Should_ReturnError_When_FinancialOperationUpdateFails()
     {
         // Arrange
-        var command = new UpdateFinancialOperationCommand(Guid.NewGuid(), "New Name", 200, "USD", Guid.NewGuid());
+        var command = new UpdateFinancialOperationCommand(Guid.CreateVersion7(), "New Name", 200, "USD", Guid.CreateVersion7());
         var token = new CancellationToken();
 
         _financialTypesServiceMock.Setup(x => x.UpdateAsync(It.IsAny<Guid>(), It.IsAny<string>(), It.IsAny<decimal>(), It.IsAny<string>(), token, It.IsAny<Guid>()))
@@ -41,10 +41,10 @@ public class UpdateFinancialOperationCommandHandlerTests
     {
         // Arrange
         var financialOperation = new FinancialOperationBuilder()
-            .WithId(Guid.NewGuid())
+            .WithId(Guid.CreateVersion7())
             .WithName("Initial Name")
             .Build();
-        var command = new UpdateFinancialOperationCommand(financialOperation.Id, "New Name", 200, "USD", Guid.NewGuid());
+        var command = new UpdateFinancialOperationCommand(financialOperation.Id, "New Name", 200, "USD", Guid.CreateVersion7());
         var token = new CancellationToken();
 
         _financialTypesServiceMock.Setup(x => x.UpdateAsync(It.IsAny<Guid>(), It.IsAny<string>(), It.IsAny<decimal>(), It.IsAny<string>(), token, It.IsAny<Guid>()))

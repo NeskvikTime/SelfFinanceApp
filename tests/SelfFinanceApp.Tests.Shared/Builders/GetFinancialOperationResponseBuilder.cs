@@ -5,11 +5,11 @@ namespace SelfFinanceApp.Tests.Shared.Builders
 {
     public class GetFinancialOperationResponseBuilder
     {
-        private Guid _id = Guid.NewGuid();
+        private Guid _id = Guid.CreateVersion7();
         private string _name = "Default Operation Name";
         private decimal _amount = 100.00m;
         private string _currency = "USD";
-        private Guid _financialTypeId = Guid.NewGuid();
+        private Guid _financialTypeId = Guid.CreateVersion7();
         private string _financialTypeName = "Default Financial Type Name";
         private DateOnly _date = DateOnly.FromDateTime(DateTime.Now);
         private TransactionDirection _directionType = TransactionDirection.Income;

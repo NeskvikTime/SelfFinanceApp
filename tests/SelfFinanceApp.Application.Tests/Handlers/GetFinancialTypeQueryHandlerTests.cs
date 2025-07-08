@@ -22,7 +22,7 @@ namespace SelfFinanceApp.Application.Tests.Handlers
         public async Task Handle_GivenValidId_ShouldReturnFinancialType()
         {
             // Arrange
-            var financialTypeId = Guid.NewGuid();
+            var financialTypeId = Guid.CreateVersion7();
             var financialType = new DomainEntities.FinancialType("Rent", TransactionDirection.Expense, financialTypeId);
             _financialTypeRepositoryMock
                 .Setup(x => x.GetByIdAsync(financialTypeId, It.IsAny<CancellationToken>()))
@@ -41,7 +41,7 @@ namespace SelfFinanceApp.Application.Tests.Handlers
         public async Task Handle_GivenInvalidId_ShouldReturnError()
         {
             // Arrange
-            var financialTypeId = Guid.NewGuid();
+            var financialTypeId = Guid.CreateVersion7();
             _financialTypeRepositoryMock
                 .Setup(x => x.GetByIdAsync(financialTypeId, It.IsAny<CancellationToken>()))
                 .ReturnsAsync((DomainEntities.FinancialType)null);

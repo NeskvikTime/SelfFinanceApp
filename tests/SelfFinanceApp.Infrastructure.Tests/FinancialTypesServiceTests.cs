@@ -54,7 +54,7 @@ public class FinancialTypesServiceTests
     public async Task GetByIdAsync_ShouldReturnFinancialType_WhenExists()
     {
         // Arrange
-        var financialTypeId = Guid.NewGuid();
+        var financialTypeId = Guid.CreateVersion7();
 
         var financialType = new FinancialTypeBuilder()
                             .WithId(financialTypeId)
@@ -75,7 +75,7 @@ public class FinancialTypesServiceTests
     public async Task GetByIdAsync_ShouldReturnNull_WhenDoesNotExist()
     {
         // Arrange
-        var financialTypeId = Guid.NewGuid();
+        var financialTypeId = Guid.CreateVersion7();
 
         FinancialType? expectedNullResult = null;
 
@@ -136,7 +136,7 @@ public class FinancialTypesServiceTests
     public async Task UpdateAsync_ShouldUpdateNameAndDirection()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
 
         var financialType = new FinancialTypeBuilder()
                             .WithId(id)
@@ -163,7 +163,7 @@ public class FinancialTypesServiceTests
     public async Task DeleteByIdAsync_ShouldReturnTrue_WhenDeleted()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         bool expectedResult = true;
 
         _repositoryMock.Setup(repo => repo.DeleteByIdAsync(id, It.IsAny<CancellationToken>()))
@@ -180,7 +180,7 @@ public class FinancialTypesServiceTests
     public async Task DeleteByIdAsync_ShouldReturnFalse_WhenNotDeleted()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         bool expectedResult = false;
 
         _repositoryMock.Setup(repo => repo.DeleteByIdAsync(id, It.IsAny<CancellationToken>()))
@@ -197,7 +197,7 @@ public class FinancialTypesServiceTests
     public async Task ExistsByIdAsync_ShouldReturnTrue_WhenExists()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         bool expectedResult = true;
 
         _repositoryMock.Setup(repo => repo.ExistsByIdAsync(id, It.IsAny<CancellationToken>()))
@@ -214,7 +214,7 @@ public class FinancialTypesServiceTests
     public async Task ExistsByIdAsync_ShouldReturnFalse_WhenNotExists()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         bool expectedResult = false;
 
         _repositoryMock.Setup(repo => repo.ExistsByIdAsync(id, It.IsAny<CancellationToken>()))

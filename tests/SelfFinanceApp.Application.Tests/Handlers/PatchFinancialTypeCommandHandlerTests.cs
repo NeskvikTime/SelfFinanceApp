@@ -50,7 +50,7 @@ public class PatchFinancialTypeCommandHandlerTests
     public async Task Handle_NonExistingId_ShouldReturnError()
     {
         // Arrange
-        var id = Guid.NewGuid();
+        var id = Guid.CreateVersion7();
         var patchPayload = new JsonPatchDocument<PatchFinancialTypeRequest>();
         var command = new PatchFinancialTypeCommand(id, patchPayload);
 

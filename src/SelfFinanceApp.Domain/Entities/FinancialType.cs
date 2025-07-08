@@ -1,6 +1,6 @@
-﻿using SelfFinanceApp.Domain.Common;
+﻿using SelfFinanceApp.Domain.Aggregates;
+using SelfFinanceApp.Domain.Common;
 using SelfFinanceApp.Domain.Enums;
-using SelfFinanceApp.Domain.Aggregates;
 
 namespace SelfFinanceApp.Domain.Entities
 {
@@ -12,7 +12,7 @@ namespace SelfFinanceApp.Domain.Entities
 
         public virtual List<FinancialOperation> FinancialOperations { get; set; } = new List<FinancialOperation>();
 
-        public FinancialType(string name, TransactionDirection transactionType, Guid? id = null) : base(id ?? Guid.NewGuid())
+        public FinancialType(string name, TransactionDirection transactionType, Guid? id = null) : base(id ?? Guid.CreateVersion7())
         {
             Name = name;
             TransactionType = transactionType;
